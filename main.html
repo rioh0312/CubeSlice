@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <script src="./lib/three/three.min.js"></script>
+    <script src="./lib/three/controls/TrackballControls.js"></script>
+    <script src="./lib/three/renderers/Projector.js"></script>
+    <link rel="stylesheet" href="./main.css" />
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td id="leftpane" style="width:1px; border:none 1px pink; overflow:hidden;">
+                    <div class="info" id="properties" style="width: 240px; position: relative; height: 100%; display: block;">
+                        <h4>現在の表示情報<h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>データ</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>X座標</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Y座標</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Z座標</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>マウスの位置<h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>X座標</td>
+                                    <td id="mouse-x-pos">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Y座標</td>
+                                    <td id="mouse-y-pos">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Z座標</td>
+                                    <td id="mouse-z-pos">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>検索フォーム<h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>X座標</td>
+                                    <td><input id="search-x-pos" type="number" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Y座標</td>
+                                    <td><input id="search-y-pos" type="number" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Z座標</td>
+                                    <td><input id="search-z-pos" type="number" value="0"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+                <td id="openclose" style="cursor: pointer, width: 11px; position: relative; background-position: 0px 50%; background-repeat: no-repeat;"></td>
+                <td id="rightpane" style="position:relative; padding-left:8px;">
+                    <div id="canvas-frame" style="width: 100%;"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="main.js"></script>
+</body>
+
+</html>
