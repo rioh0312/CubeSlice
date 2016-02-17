@@ -7,7 +7,12 @@
     <script src="./lib/three/three.min.js"></script>
     <script src="./lib/three/controls/TrackballControls.js"></script>
     <script src="./lib/three/renderers/Projector.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
     <link rel="stylesheet" href="./main.css" />
+    <script src="./Source/Timer.js"></script>
 </head>
 
 <body>
@@ -76,6 +81,12 @@
                 <td id="openclose" style="cursor: pointer, width: 11px; position: relative; background-position: 0px 50%; background-repeat: no-repeat;"></td>
                 <td id="rightpane" style="position:relative; padding-left:8px;">
                     <div id="canvas-frame" style="width: 100%;"></div>
+                        <div id="controller">
+                        <button id="play">再生</button>
+                        <button id="stop">停止</button>
+                        <input type="range" id="playback" value="0" min="0" max="100">
+                        <span id="current-time">0</span>/<span id="limit-time">100</span>
+                    </div>
                 </td>
             </tr>
         </tbody>

@@ -1,3 +1,4 @@
+/* global $ */
 /* global THREE */
 var width = 600;
 var height = 400;
@@ -37,11 +38,29 @@ initRenderer();
 // レンダリング
 animate();
 
-// -----------------------------------------------
-// マウスイベント
-// -----------------------------------------------
-document.addEventListener('mousemove', onMouseMove, false);
-document.addEventListener('mousedown', onMouseDown, false);
+// マウスイベント登録
+initMouseEvent();
+
+// -------------------------------
+// GUI関連
+// -------------------------------
+var timer = new Timer(100, [function (time) {
+    document.getElementById('current-time').innerHTML = time;
+    $('#playback').val(time);
+    $('#playback').change();
+
+}]);
+
+$('#play').click(function () {
+    timer.start();
+});
+$('#stop').click(function () {
+    timer.stop();
+});
+$('#playback').change(function () {
+    var playback = $(this);
+    timer.setTime(Number(playback.val()));
+});
 
 function initCamera() {
     // カメラ作成
@@ -83,6 +102,11 @@ function initRenderer() {
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
+}
+
+function initMouseEvent() {
+    renderer.domElement.addEventListener('mousemove', onMouseMove, false);
+    renderer.domElement.addEventListener('mousedown', onMouseDown, false);
 }
 
 function createMainCubeMesh() {
